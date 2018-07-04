@@ -1,4 +1,4 @@
-from rest_framework import generics
+from rest_framework import generics, status
 from rest_framework.pagination import PageNumberPagination
 from ..models import Data as Data_model
 from .serializers import DataSerializer
@@ -13,11 +13,16 @@ class CustomPagePagination(PageNumberPagination):
     max_page_size = 10
 
 @method_decorator(login_required, name='dispatch')
-class DataView(generics.ListAPIView):
-    # queryset = Data_model.objects.all().order_by('id') # sorted by id
+class DataView(generics.ListCreateAPIView):
     serializer_class = DataSerializer
     pagination_class = CustomPagePagination
 
     def get_queryset(self, *args, **kwargs):
         return Data_model.objects.all().filter(user=self.request.user).order_by('id')
+
+    def post(self, *args, **kwargs):
+        res = super().post(*args, **kwargs)
+        if res.status_code == status.HTTP_201_CREATED:
+            pass
+        return res
 
