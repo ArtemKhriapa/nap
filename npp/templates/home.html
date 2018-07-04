@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> Phonebook  {{user.username}} </title>
+    </head>
+
+    <body>
+        <!--<h2>Home</h2>-->
+        <p>You'r in home page, {{user.username}}.</p>
+        <!--<p>Hello {{ user.username }}!</p>-->
+        <p><a href="{% url 'login' %}"> Log in </a></p>
+        <p><a href="{% url 'logout' %}"> Log out </a></p>
+
+    </body>
+</html>
+

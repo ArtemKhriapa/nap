@@ -6,6 +6,6 @@ class DataSerializer(serializers.ModelSerializer):
     class Meta:
         model = Data_model
         fields = (
-            'name',
+            'text',
             'user'
         )
