@@ -10,10 +10,9 @@
     <script language="JavaScript" type="text/javascript" src="{% static 'jquery-3.3.1.min.js' %}"></script>
     <script language="JavaScript" type="text/javascript" src="{% static 'js/actions.js' %}"></script>
 </head>
-
 <body>
 
-    <p>You'r in home page,  {{user.username}} !.</p>
+    <p>You'r in home page,  {{user.username}} !</p>
     <p id="login-form" ><a  href="{% url 'login' %}"> Log in </a></p>
     <p id="logout-form" ><a  href="{% url 'logout' %}"> Log out </a></p>
 
