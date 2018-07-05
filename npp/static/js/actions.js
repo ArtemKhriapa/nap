@@ -1,3 +1,9 @@
+function get_hostname(url) {
+        var m = url.match(/^http:\/\/[^/]+/);
+        return m ? m[0] : null;
+    }
+var currentUrl= postUrl = get_hostname(window.location.href) + '/api/data/'
+
 $(document).ready(function(){
     function getCookie(c_name) {
         if(document.cookie.length > 0) {
@@ -25,19 +31,15 @@ function post_new(user_id){
     var currentUser = user_id;
     var json = JSON.stringify({"text":text, "user":currentUser});
     // alert(json)
-    var url = window.location.href;
 
     function get_hostname(url) {
             var m = url.match(/^http:\/\/[^/]+/);
             return m ? m[0] : null;
         }
 
-    var posUrl = get_hostname(url) + '/api/data/'
-    // alert(posUrl)
-
     $.ajax({
         type: "POST",
-        url: posUrl,
+        url: window.postUrl,
         data: json,
         success: function(){},
         dataType: "json",
@@ -49,3 +51,12 @@ function post_new(user_id){
             $(this).val($(this).data('defvalue'));
         });
 };
+
+$.getJSON(currentUrl, function(data) {
+    // alert(currentUrl);
+    for (var i in data.results){
+        alert(data.results[i].text)
+    }
+    // nexPage = data.next;
+    // prevPage = data.previous;
+});

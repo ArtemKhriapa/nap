@@ -23,7 +23,15 @@
 
          <input type="text" id="newtext" placeholder="text..." ><br>
      </form>
-
+    <section>
+        <div class="container">
+            <div id="data-container" align="center" ></div>
+                <div id="navigation" align="center">
+                    <input type="button" title="Click to get previous page" onclick="buttonPrev();" value="<<Prev"/>
+                    <input type="button" title="Click to get next page" onclick="buttonNext();" value="Next>>"/>
+                </div>
+        </div>
+    </section>
 
     <script language="JavaScript" type="text/javascript" src="{% static 'js/actions.js' %}"></script>
     </body>
