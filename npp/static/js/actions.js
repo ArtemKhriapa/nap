@@ -1,13 +1,19 @@
 function get_hostname(url) {
-        var m = url.match(/^http:\/\/[^/]+/);
-        return m ? m[0] : null;
-    }
+    var m = url.match(/^http:\/\/[^/]+/);
+    return m ? m[0] : null;
+};
 
-var currentUrl = postUrl = get_hostname(window.location.href) + '/api/data/'
+var currentUrl = postUrl = get_hostname(window.location.href) + '/api/data/';
 
 $(document).ready(function(){
     function getCookie(c_name) {
+        // if (document.cookie){
+        //     alert('cookies!!!!')
+        //     $('#login-form').css("display", "none");
+        //     $('#logout-form').css("display", "block");
+        // }
         if(document.cookie.length > 0) {
+
             c_start = document.cookie.indexOf(c_name + "=");
             if(c_start != -1) {
                 c_start = c_start + c_name.length + 1;
@@ -84,5 +90,15 @@ function buttonPrev() {
         var address = window.prevPage
         $('#data-container').empty();
         getData(address);
+    }
+};
+
+function hideButtons(user){
+    if (user){
+        $('#login-form').css("display","none");
+           // alert('user')
+    } else {
+        $('#logout-form').css("display", "none");
+           // alert('not user')
     }
 };

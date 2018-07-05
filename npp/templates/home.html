@@ -13,16 +13,15 @@
 
     <body>
     <script>
-        getData(currentUrl)
+        alert('{{user.username}}')
+
     </script>
     <p>You'r in home page,  {{user.username}} !.</p>
-    <p><a href="{% url 'login' %}"> Log in </a></p>
-    <p><a href="{% url 'logout' %}"> Log out </a></p>
+    <p id="login-form" ><a  href="{% url 'login' %}"> Log in </a></p>
+    <p id="logout-form" ><a  href="{% url 'logout' %}"> Log out </a></p>
 
      <form >
-         <!--{% csrf_token %}-->
          <input type="button" onclick="javascript:post_new('{{user.id}}')" value="Create new record" /><br>
-
          <input type="text" id="newtext" placeholder="text..." ><br>
      </form>
     <section>
@@ -35,7 +34,10 @@
         </div>
     </section>
 
-
+    <script>
+        getData(currentUrl);
+        hideButtons('{{user.username}}');
+    </script>
     </body>
 </html>
 
