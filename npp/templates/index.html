@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="csrf-token" content="{{ csrf_token }}">
+
+    <title>{{user.username}}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script language="JavaScript" type="text/javascript" src="{% static 'jquery-3.3.1.min.js' %}"></script>
+    <script language="JavaScript" type="text/javascript" src="{% static 'js/actions.js' %}"></script>
+</head>
+<body>
+
+    <p>You'r in home page,  {{user.username}} !</p>
+    <p id="login-form" ><a  href="{% url 'login' %}"> Log in </a></p>
+    <p id="logout-form" ><a  href="{% url 'logout' %}"> Log out </a></p>
+
+     <form >
+         <input type="button" onclick="javascript:post_new('{{user.id}}')" value="Create new record" /><br>
+         <input type="text" id="newtext" placeholder="text..." ><br>
+     </form>
+    <section>
+        <div class="container">
+            <div id="data-container" align="center" ></div>
+                <div id="navigation" align="center">
+                    <input type="button" title="Click to get previous page" onclick="buttonPrev();" value="<<Prev"/>
+                    <input type="button" title="Click to get next page" onclick="buttonNext();" value="Next>>"/>
+                </div>
+        </div>
+    </section>
+
+    <script>
+        getData(currentUrl);
+        hideButtons('{{user.username}}');
+    </script>
+</body>
+</html>
+
