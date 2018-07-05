@@ -51,12 +51,35 @@ function post_new(user_id){
             $(this).val($(this).data('defvalue'));
         });
 };
+function getData (currentUrl) {
+    $.getJSON(currentUrl, function (data) {
+        // alert(currentUrl);
+        for (var i in data.results) {
+            var txt = document.createTextNode(data.results[i].text + " --- " + data.results[i].user);
+            var objTo = document.getElementById('data-container');
+            // alert(data.results[i].text + " --- " + data.results[i].user)
+            var p = document.createElement('p');
+            p.appendChild(txt);
+            objTo.appendChild(p);
 
-$.getJSON(currentUrl, function(data) {
-    // alert(currentUrl);
-    for (var i in data.results){
-        alert(data.results[i].text)
+        }
+        nexPage = data.next;
+        prevPage = data.previous;
+    });
+};
+
+function buttonNext() {
+    if (window.nexPage != null) {
+        var address = window.nexPage
+        $('#data-container').empty();
+        getData(address);
     }
-    // nexPage = data.next;
-    // prevPage = data.previous;
-});
+};
+
+function buttonPrev() {
+    if (window.prevPage != null) {
+        var address = window.prevPage
+        $('#data-container').empty();
+        getData(address);
+    }
+};
