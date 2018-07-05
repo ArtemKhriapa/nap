@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="csrf-token" content="{{ csrf_token }}">
+
+    <title>{{user.username}}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script language="JavaScript" type="text/javascript" src="{% static 'jquery-3.3.1.min.js' %}"></script>
+
+</head>
+
+    <body>
+
+    <p>You'r in home page,  {{user.username}} !.</p>
+    <p><a href="{% url 'login' %}"> Log in </a></p>
+    <p><a href="{% url 'logout' %}"> Log out </a></p>
+
+     <form >
+         <!--{% csrf_token %}-->
+         <input type="button" onclick="javascript:post_new('{{user.id}}')" value="Create new record" /><br>
+
+         <input type="text" id="newtext" placeholder="text..." ><br>
+     </form>
+
+
+    <script language="JavaScript" type="text/javascript" src="{% static 'js/actions.js' %}"></script>
+    </body>
+</html>
+
