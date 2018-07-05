@@ -2,7 +2,8 @@ function get_hostname(url) {
         var m = url.match(/^http:\/\/[^/]+/);
         return m ? m[0] : null;
     }
-var currentUrl= postUrl = get_hostname(window.location.href) + '/api/data/'
+
+var currentUrl = postUrl = get_hostname(window.location.href) + '/api/data/'
 
 $(document).ready(function(){
     function getCookie(c_name) {
@@ -39,7 +40,7 @@ function post_new(user_id){
 
     $.ajax({
         type: "POST",
-        url: window.postUrl,
+        url: postUrl,
         data: json,
         success: function(){},
         dataType: "json",
@@ -50,18 +51,20 @@ function post_new(user_id){
         function () {
             $(this).val($(this).data('defvalue'));
         });
+    getData(postUrl);
 };
+
 function getData (currentUrl) {
+    $('#data-container').empty();
     $.getJSON(currentUrl, function (data) {
         // alert(currentUrl);
         for (var i in data.results) {
-            var txt = document.createTextNode(data.results[i].text + " --- " + data.results[i].user);
+            var txt = document.createTextNode('Some data from JSON : ' + data.results[i].text);
             var objTo = document.getElementById('data-container');
             // alert(data.results[i].text + " --- " + data.results[i].user)
             var p = document.createElement('p');
             p.appendChild(txt);
             objTo.appendChild(p);
-
         }
         nexPage = data.next;
         prevPage = data.previous;
