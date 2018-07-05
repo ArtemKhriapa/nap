@@ -11,11 +11,8 @@
     <script language="JavaScript" type="text/javascript" src="{% static 'js/actions.js' %}"></script>
 </head>
 
-    <body>
-    <script>
-        alert('{{user.username}}')
+<body>
 
-    </script>
     <p>You'r in home page,  {{user.username}} !.</p>
     <p id="login-form" ><a  href="{% url 'login' %}"> Log in </a></p>
     <p id="logout-form" ><a  href="{% url 'logout' %}"> Log out </a></p>
@@ -38,6 +35,6 @@
         getData(currentUrl);
         hideButtons('{{user.username}}');
     </script>
-    </body>
+</body>
 </html>
 
