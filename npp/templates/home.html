@@ -6,65 +6,26 @@
     <meta name="csrf-token" content="{{ csrf_token }}">
 
     <title>{{user.username}}</title>
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <script language="JavaScript" type="text/javascript" src="{% static 'jquery-3.3.1.min.js' %}"></script>
 
 </head>
 
     <body>
-    <script>
 
-        $(document).ready(function(){
-            function getCookie(c_name) {
-                if(document.cookie.length > 0) {
-                    c_start = document.cookie.indexOf(c_name + "=");
-                    if(c_start != -1) {
-                        c_start = c_start + c_name.length + 1;
-                        c_end = document.cookie.indexOf(";", c_start);
-                        if(c_end == -1) c_end = document.cookie.length;
-                        return unescape(document.cookie.substring(c_start,c_end));
-                    }
-                }
-                return "";
-            }
-            $(function () {
-                $.ajaxSetup({
-                    headers: {
-                        "X-CSRFToken": getCookie("csrftoken")
-                    }
-                });
-            });
-        });
-
-        function postnew(){
-            var text = newtext.value;
-            var currentUser = '{{user.id}}';
-            var json = JSON.stringify({"text":text, "user":currentUser});
-//            var url = window.location.href;
-//            var pathname = window.location.pathname;
-//            alert(pathname)
-            $.ajax({
-                type: "POST",
-//                FIXME: need to normal url for sending data (api/data != api/home)
-                url: 'http://127.0.0.1:8000/api/data/',
-                data: json,
-                success: function(){},
-                dataType: "json",
-                contentType : "application/json"
-                });
-        };
-
-    </script>
-    <p>You'r in home page, {{user.username}}.</p>
+    <p>You'r in home page,  {{user.username}} !.</p>
     <p><a href="{% url 'login' %}"> Log in </a></p>
     <p><a href="{% url 'logout' %}"> Log out </a></p>
 
      <form >
-         <input type="button" onclick="javascript:postnew()" style="font-size : 25px"title="Create new record" value="Create new record" /><br>
+         <!--{% csrf_token %}-->
+         <input type="button" onclick="javascript:post_new('{{user.id}}')" value="Create new record" /><br>
 
          <input type="text" id="newtext" placeholder="text..." ><br>
      </form>
 
+
+    <script language="JavaScript" type="text/javascript" src="{% static 'js/actions.js' %}"></script>
     </body>
 </html>
 

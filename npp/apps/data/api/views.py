@@ -22,9 +22,7 @@ class DataView(generics.ListCreateAPIView):
 
     def post(self, *args, **kwargs):
         res = super().post(*args, **kwargs)
-        print('here')
         if res.status_code == status.HTTP_201_CREATED:
-
             pass
         return res
 
