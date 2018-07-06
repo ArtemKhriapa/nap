@@ -39,11 +39,6 @@ function post_new(user_id){
     var json = JSON.stringify({"text":text, "user":currentUser});
     // alert(json)
 
-    function get_hostname(url) {
-            var m = url.match(/^http:\/\/[^/]+/);
-            return m ? m[0] : null;
-        }
-
     $.ajax({
         type: "POST",
         url: postUrl,
@@ -71,7 +66,7 @@ function getData (currentUrl) {
             var p = document.createElement('p');
             p.appendChild(txt);
             objTo.appendChild(p);
-        }
+        };
         nexPage = data.next;
         prevPage = data.previous;
     });
