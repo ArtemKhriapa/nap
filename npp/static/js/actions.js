@@ -7,13 +7,7 @@ var currentUrl = postUrl = get_hostname(window.location.href) + '/api/data/';
 
 $(document).ready(function(){
     function getCookie(c_name) {
-        // if (document.cookie){
-        //     alert('cookies!!!!')
-        //     $('#login-form').css("display", "none");
-        //     $('#logout-form').css("display", "block");
-        // }
         if(document.cookie.length > 0) {
-
             c_start = document.cookie.indexOf(c_name + "=");
             if(c_start != -1) {
                 c_start = c_start + c_name.length + 1;
@@ -38,11 +32,6 @@ function post_new(user_id){
     var currentUser = user_id;
     var json = JSON.stringify({"text":text, "user":currentUser});
     // alert(json)
-
-    function get_hostname(url) {
-            var m = url.match(/^http:\/\/[^/]+/);
-            return m ? m[0] : null;
-        }
 
     $.ajax({
         type: "POST",
@@ -71,7 +60,7 @@ function getData (currentUrl) {
             var p = document.createElement('p');
             p.appendChild(txt);
             objTo.appendChild(p);
-        }
+        };
         nexPage = data.next;
         prevPage = data.previous;
     });
