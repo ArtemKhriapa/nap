@@ -11,7 +11,14 @@
     <script language="JavaScript" type="text/javascript" src="{% static 'js/actions.js' %}"></script>
 </head>
 <body>
-
+    <section>
+        <!--<iframe width="420" height="315"-->
+            <!--src="https://www.youtube.com/embed/akAQ5s4-Tp0?ecver=2">-->
+        <!--</iframe>-->
+    </section>
+    <section>
+        <span>Its try to play with FE and BE. D'nt kill me ))</span>
+    </section>
     <p>You'r in home page,  {{user.username}} !</p>
     <p id="login-form" ><a  href="{% url 'login' %}"> Log in </a></p>
     <p id="logout-form" ><a  href="{% url 'logout' %}"> Log out </a></p>
@@ -28,11 +35,6 @@
                     <input type="button" title="Click to get next page" onclick="buttonNext();" value="Next>>"/>
                 </div>
         </div>
-    </section>
-    <section>
-        <!--<iframe width="420" height="315"-->
-            <!--src="https://www.youtube.com/embed/akAQ5s4-Tp0?ecver=2">-->
-        <!--</iframe>-->
     </section>
     <script>
         getData(currentUrl);
