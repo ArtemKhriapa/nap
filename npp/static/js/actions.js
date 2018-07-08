@@ -3,7 +3,7 @@ function get_hostname(url) {
     return m ? m[0] : null;
 };
 
-var currentUrl = postUrl = get_hostname(document.URL) + '/api/data/';
+var currentUrl = postUrl = get_hostname(document.URL) + '/api/data/' ;
 
 $(document).ready(function(){
     function getCookie(c_name) {
