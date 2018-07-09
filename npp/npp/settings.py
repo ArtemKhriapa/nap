@@ -28,6 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'artemkhriapa.pythonanywhere.com',
+    '127.0.0.1'
 ]
 
 
@@ -44,6 +45,8 @@ INSTALLED_APPS = [
     'rest_framework',
 
     'apps.data',
+    'apps.userauth',
+    'apps.OTC',
 ]
 
 MIDDLEWARE = [
