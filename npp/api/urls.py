@@ -5,6 +5,7 @@ from .views import HomeView
 
 urlpatterns = [
     url(r'^data/', include('apps.data.api.urls')),
+    url(r'^registration/', include('apps.userauth.api.urls')),
 
     url(r'^home/', HomeView, name='home'),
     url(r'^login/$', auth_views.login, {'template_name': 'login.html'}, name='login'),
