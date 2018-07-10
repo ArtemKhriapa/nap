@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'apps.data',
     'apps.userauth',
     'apps.OTC',
+    'apps.mailer',
 ]
 
 MIDDLEWARE = [

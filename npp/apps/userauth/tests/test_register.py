@@ -20,20 +20,20 @@ class RegisterTest(TestCase):
         )
         self.user = create_user('SomeTestUser')
 
-    def test_success(self):
-        response = self.c.get(
-            '/api/registration/success/'
-        )
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data, [
-            {
-                'username': self.reg_try.username,
-                'user_firstname': None,
-                'user_lastname': None,
-                'email':self.reg_try.email,
-                'otc': int(self.reg_try.otc.id)
-            }
-        ])
+    # def test_success(self):
+    #     response = self.c.get(
+    #         '/api/registration/success/'
+    #     )
+    #     self.assertEqual(response.status_code, status.HTTP_200_OK)
+    #     self.assertEqual(response.data, [
+    #         {
+    #             'username': self.reg_try.username,
+    #             'user_firstname': None,
+    #             'user_lastname': None,
+    #             'email':self.reg_try.email,
+    #             'otc': int(self.reg_try.otc.id)
+    #         }
+    #     ])
 
     def test_get_registration_forbidden(self):
 

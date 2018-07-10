@@ -10,10 +10,6 @@ from apps.OTC.api.serializers  import OTCSerializer
 from apps.userauth.models import RegistrationTry as RegistrationTryModel
 from apps.OTC.models import OTCRegistration
 
-# from django import forms
-# from django.core.mail import send_mail
-
-
 class RegistrationTry(generics.CreateAPIView):
     queryset = RegistrationTryModel.objects.all()
     serializer_class = RegTrySerializer
@@ -40,12 +36,6 @@ class RegistrationCheck(generics.RetrieveUpdateAPIView):
         except Exception as e:
             raise e # NOTICE: this is how we debug except blocks
             raise Http404
-
-
-class SuccessRegistration(generics.ListCreateAPIView):
-    queryset = RegistrationTryModel.objects.all()
-    serializer_class = RegTrySerializer
-
 
 class SetPass(generics.RetrieveAPIView,generics.CreateAPIView ):
     queryset = RegistrationTryModel.objects.all()

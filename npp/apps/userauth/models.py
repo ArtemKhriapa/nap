@@ -32,7 +32,7 @@ class RegistrationTry(models.Model):
         if not self.id:
             new_otc = OTCRegistration.objects.create()
             self.otc = new_otc
-            print('email to  ' + self.email)
+            # print('email to  ' + self.email)
             # somewhere in this place send link (OTC.link) to self.user_email
         return super().save(*args, **kwargs)
 
