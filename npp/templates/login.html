@@ -12,6 +12,10 @@
         {{ form.as_p }}
         <button type="submit">Login</button>
     </form>
+
+    <p>here</p>
+    <a href="{% url 'social:begin' 'google-oauth2' %}">Login with Google</a><br>
+    <!--<a href="">Google (useless)</a>-->
 </body>
 
 </html>

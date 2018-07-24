@@ -20,6 +20,8 @@
         <span>Its try to play with FE and BE. D'nt kill me ))</span>
     </section>
     <p>You'r in home page,  {{user.username}} !</p>
+    <p>test -- {{user.first_name}} {{user.last_name}} {{user.email}}</p>
+    <br>
     <p id="login-form" ><a  href="{% url 'login' %}"> Log in </a></p>
     <p id="logout-form" ><a  href="{% url 'logout' %}"> Log out </a></p>
 
