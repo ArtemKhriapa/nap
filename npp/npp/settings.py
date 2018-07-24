@@ -150,6 +150,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(os.path.dirname(__file__), '..', 'static').replace('\\', '/'),)
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY ='942305358998-82cn2mmff1dom4468og9jl8k1vgebmn0.apps.googleusercontent.com'  #Paste CLient Key
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'f37-coxbMJlFPxen40l93HVt' #Paste Secret Key
+
 
