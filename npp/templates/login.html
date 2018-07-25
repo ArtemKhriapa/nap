@@ -13,10 +13,11 @@
         <button type="submit">Login</button>
     </form>
 
-    <p>here</p>
+    <p>or login with socials in here</p>
     <a href="{% url 'social:begin' 'google-oauth2' %}">Login with Google</a><br>
-    <a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
-    <!--<a href="">Google (useless)</a>-->
+    <a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>><br>
+    <a href="{% url 'social:begin' 'github' %}">Login with GitHub</a><br>
+
 </body>
 
 </html>
