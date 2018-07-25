@@ -153,4 +153,5 @@ STATICFILES_DIRS = (os.path.join(os.path.dirname(__file__), '..', 'static').repl
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = 'in local'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'in local'
 
-
+SOCIAL_AUTH_FACEBOOK_KEY = 'in local'
+SOCIAL_AUTH_FACEBOOK_SECRET = 'in local'
