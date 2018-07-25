@@ -4,7 +4,7 @@ function get_hostname(url) {
 };
 
 var currentUrl = postUrl = get_hostname(document.URL) + '/api/data/' ;
-
+// currentUrl = 'https://' + window.location.hostname + '/api/data/' ;
 $(document).ready(function(){
     function getCookie(c_name) {
         if(document.cookie.length > 0) {
