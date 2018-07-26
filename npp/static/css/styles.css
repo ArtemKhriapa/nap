@@ -1,4 +1,7 @@
 p {
   background-color: lightblue; }
 
+.header, .container {
+  border: 1px solid red; }
+
 /*# sourceMappingURL=styles.css.map */

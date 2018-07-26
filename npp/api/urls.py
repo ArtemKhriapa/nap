@@ -9,5 +9,5 @@ urlpatterns = [
 
     url(r'^home/', HomeView, name='home'),
     url(r'^login/$', auth_views.login, {'template_name': 'login.html'}, name='login'),
-    url(r'^logout/$', auth_views.logout, {'template_name': 'logout.html'}, name='logout'),
+    url(r'^logout/$', auth_views.logout,{'next_page': '/api/home/'}, name='logout'),# , {'template_name': 'logout.html'},
 ]
