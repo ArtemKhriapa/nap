@@ -88,6 +88,7 @@ AUTHENTICATION_BACKENDS = (
     'social_core.backends.google.GoogleOAuth2',  # for Google authentication
     'social_core.backends.github.GithubOAuth2',  # for Github authentication
     'social_core.backends.facebook.FacebookOAuth2',  # for Facebook authentication
+    'social.backends.linkedin.LinkedinOAuth2', # try linkedin authentication
 
     'django.contrib.auth.backends.ModelBackend',
 )
@@ -158,3 +159,6 @@ SOCIAL_AUTH_FACEBOOK_SECRET = 'in local'
 
 SOCIAL_AUTH_GITHUB_KEY = 'in local'
 SOCIAL_AUTH_GITHUB_SECRET = 'in local'
+
+SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = 'in local'
+SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = 'in local'
