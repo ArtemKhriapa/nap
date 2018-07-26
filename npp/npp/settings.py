@@ -88,7 +88,7 @@ AUTHENTICATION_BACKENDS = (
     'social_core.backends.google.GoogleOAuth2',  # for Google authentication
     'social_core.backends.github.GithubOAuth2',  # for Github authentication
     'social_core.backends.facebook.FacebookOAuth2',  # for Facebook authentication
-    'social.backends.linkedin.LinkedinOAuth2', # try linkedin authentication
+    'social_core.backends.linkedin.LinkedinOAuth2', # try linkedin authentication
 
     'django.contrib.auth.backends.ModelBackend',
 )
