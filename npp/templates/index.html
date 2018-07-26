@@ -3,23 +3,61 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token }}">
-
-    <title>{{user.username}}</title>
+    <title>My pet :)</title>
+    <!--<title>{{user.username}}</title>-->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122917934-1"></script>
     <script async language="JavaScript" type="text/javascript" src="{% static 'js/google_analytics.js' %}"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <script language="JavaScript" type="text/javascript" src="{% static 'jquery-3.3.1.min.js' %}"></script>
+    <!--<script language="JavaScript" type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script>-->
     <script language="JavaScript" type="text/javascript" src="{% static 'js/actions.js' %}"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
 
 </head>
 <body>
-    <section>
+    <sectionv class="header">
+         <div class="container p-0">
+            <div class="content d-flex justify-content-between align-items-center py-3">
+                <a class="navbar-brand" href="#">
+                    <img src="img/Logo.png" class="d-inline-block align-top" alt="">
+                </a>
+                <nav class="navbar navbar-expand-lg navbar-light p-0 text-uppercase">
+                    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link px-3 text-right" href="#">Home </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3 text-right" href="#">Service</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3 text-right" href="#">About us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3 text-right" href="#">Pricing table</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3 text-right" href="#">How it work</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3 text-right" href="#">Happy clients</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3 text-right" href="#">Contact us</a>
+                        </li>
+                    </ul>
+                  </div>
+                </nav>
+            </div>
+        </div>
         <!--<iframe width="420" height="315"-->
             <!--src="https://www.youtube.com/embed/akAQ5s4-Tp0?ecver=2">-->
         <!--</iframe>-->
-    </section>
+    </sectionv>
     <section>
         <span>Its try to play with FE and BE. D'nt kill me ))</span><br>
         <strong>it's ugly, I know. I will fix it soon. Now I'm experimenting with BE and social networks.</strong><br>
@@ -48,6 +86,9 @@
         getData(currentUrl);
         hideButtons('{{user.username}}');
     </script>
+         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 </body>
 </html>
 
